@@ -15,10 +15,13 @@ class App extends Component {
     }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/resumeData.json')
+    var url = 'https://react-web-portfolio.herokuapp.com/resumeData.json'; //heroku
+    //axios.get('http://localhost:3000/resumeData.json')                  //local
+    axios.get(url)
     .then(response => {this.setState({resumeData: response.data })})
     .catch(err => {console.log(err)})
   }
+
 
 
   render() {
